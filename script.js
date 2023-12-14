@@ -74,7 +74,7 @@
 // });
  
 
-// 2
+// 2----------
 
 // document.addEventListener('DOMContentLoaded', function () {
 //     const inputField = document.getElementById('inputField');
@@ -110,7 +110,7 @@
 //   });
 
   
-//   3
+//   3--------------
   
 // document.addEventListener("DOMContentLoaded", function() {
 //     const currentDate = new Date();
@@ -178,7 +178,7 @@
 // });
 
 
-// 4
+// 4-----------------
 
 // const tagDescriptions = {
 //     "a": "Определяет гиперссылку",
@@ -207,7 +207,7 @@
 //     tagInput.value = "";
 //   }
   
-// 5
+// 5----------------
 
 // const historicalEvents = {
 //     2000: [
@@ -270,7 +270,7 @@
 //     tableElement.innerHTML = "";
 //   }
  
-// 6
+// 6-----------------
 
 // const horoscopes = {
 //     "Овен": {
@@ -316,7 +316,7 @@
 //     document.getElementById("output").textContent = horoscope;
 //   }
   
-// 7
+// 7---------------
 
 // document.addEventListener("DOMContentLoaded", function () {
 //     const predictions = [
@@ -357,7 +357,7 @@
 //     });
 // });
 
-// 2.2
+// 2.2-------
 
 // let cities = [];
 
@@ -380,16 +380,17 @@
 //   } else {
 //     return "Неверный ход. Первая буква города не совпадает с последней буквой предыдущего города.";
 //   }
+// }
 
-// console.log(makeMove("Москва")); 
-// console.log(makeMove("Астана")); 
-// console.log(makeMove("Алматы")); 
-// console.log(makeMove("Астана")); 
+// console.log(makeMove("Москва")); // Ход успешно сделан. Город добавлен в список.
+// console.log(makeMove("Астана")); // Ход успешно сделан. Город добавлен в список.
+// console.log(makeMove("Алматы")); // Неверный ход. Первая буква города не совпадает с последней буквой предыдущего города.
+// console.log(makeMove("Астана")); // Этот город уже был в игре. Пожалуйста, введите другой город.
 
 
 // 2.3--------------
 
-// let allCities = ["Москва", "МОСКВА2", "МОСКВА2", "МОСКВА3", "МОСКВА4", "МОСКВА4", "МОСКВА5", "Самара", "Омск", "Ростов-на-Дону"];
+// let allCities = ["Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань", "Нижний Новгород", "Челябинск", "Самара", "Омск", "Ростов-на-Дону"];
 // let usedCities = [];
 // let currentPlayer = "player";
 
@@ -512,6 +513,7 @@
 // remove.classList.add('remove');
 // remove.textContent = 'удалить';
 // remove.addEventListener('click', function() {
+//     // получаем родительский элемент (ul) и удаляем текущий элемент (li)
 //     this.parentNode.remove();
 // });
 
@@ -543,6 +545,7 @@
 //     // Заменяем текстовый контент нашего span на инпут
 //     task.replaceWith(input);
 
+//     // Фокусируемся на инпуте
 //     input.focus();
 
 //     // Обработчик события нажатия Enter
@@ -657,7 +660,7 @@
 // 4.5----------------------------
 
 // function createCell(tr, text, id) {
-//   var td = document.createElement('td');
+//   let td = document.createElement('td');
 //   td.textContent = text;
 //   td.id = id;
 //   tr.appendChild(td);
@@ -666,7 +669,7 @@
 
 // function allowEdit(td) {
 //   td.addEventListener('dblclick', function() {
-//     var input = document.createElement('input');
+//     let input = document.createElement('input');
 //     input.type = 'text';
 //     input.value = td.textContent;
 //     td.textContent = '';
@@ -682,8 +685,8 @@
 //   });
 // }
 
-// var table = document.getElementById('myTable');
-// var tr = table.getElementsByTagName('tr')[0];
+// let table = document.getElementById('myTable');
+// let tr = table.getElementsByTagName('tr')[0];
 
 // allowEdit(createCell(tr, 'Name', 'nameCell'));
 // allowEdit(createCell(tr, 'Price', 'priceCell'));
@@ -707,6 +710,7 @@
 // 				td.textContent = this.value;
 				
 // 				if (td.classList.contains('price') || td.classList.contains('amount')) {
+// 					// Выполним перерасчет
 // 					recalculate();
 // 				}
 // 			}
@@ -716,7 +720,7 @@
 
 
 // function recalculate() {
-
+// 	// Получаем ячейки с ценой, количеством и стоимостью
 // 	let priceCell = document.querySelector('.price');
 // 	let amountCell = document.querySelector('.amount');
 // 	let costCell = document.querySelector('.cost');
@@ -781,10 +785,10 @@
 
 // document.getElementById('button').addEventListener('click', function () {
 
-//   var inputs = document.querySelectorAll('#test input');
+//   let inputs = document.querySelectorAll('#test input');
   
 
-//   var userAnswers = [];
+//   let userAnswers = [];
   
 
 //   inputs.forEach(function (input) {
@@ -792,14 +796,14 @@
 //   });
   
 
-//   var answers = [
+//   let answers = [
 //       'ответ 1',
 //       'ответ 2',
 //       'ответ 3',
 //   ];
 
-//   var isCorrect = true;
-//   for (var i = 0; i < answers.length; i++) {
+//   let isCorrect = true;
+//   for (let i = 0; i < answers.length; i++) {
 //       if (userAnswers[i] !== answers[i]) {
 //           isCorrect = false;
 //           break;
@@ -814,134 +818,6 @@
 //   }
 // });
 
-// 5.3---------------
-
-// document.getElementById('checkButton').addEventListener('click', function () {
-//     var questions = document.querySelectorAll('input[type="radio"]');
-//     questions.forEach(function (radio) {
-//       checkAnswer(radio);
-//     });
-//   });
-  
-//   function checkAnswer(radio) {
-//     var parentDiv = radio.closest('div');
-//     var correctAnswer = parentDiv.querySelector('input[data-right]');
-  
-//     if (radio.checked) {
-//       if (radio === correctAnswer) {
-//         parentDiv.classList.add('correct');
-//         parentDiv.classList.remove('incorrect');
-//       } else {
-//         parentDiv.classList.add('incorrect');
-//         parentDiv.classList.remove('correct');
-//       }
-//     }
-//   }
-  
-// 5.4-----------------------------------------
-
-// let questions = [
-//     "Вопрос 1: ...",
-//     "Вопрос 2: ...",
-//     "Вопрос 3: ..."
-//   ];
-  
-//   let answers = [0, 1, 2]; // Номера правильных ответов
-  
-//   function startQuiz() {
-//     let userAnswers = [];
-  
-
-//     for (let i = 0; i < questions.length; i++) {
-//       let answer = prompt(questions[i]);
-//       userAnswers.push(parseInt(answer)); // Преобразуем ответ пользователя в число и добавляем в массив
-//     }
-  
-
-//     checkAnswers(userAnswers);
-//   }
-  
-//   function checkAnswers(userAnswers) {
-//     let correctCount = 0;
-  
-//     for (let i = 0; i < userAnswers.length; i++) {
-//       if (userAnswers[i] === answers[i]) {
-//         correctCount++;
-//       }
-//     }
-  
-
-//     alert(`Вы дали правильные ответы на ${correctCount} вопросов из ${questions.length}.`);
-//   }
-  
-
-//   startQuiz();
-
-
-// 5.5--------------
-
-// let questions = [
-//     {
-//         text: 'вопрос 1?',
-//         right: 0,
-//         variants: [
-//             'вариант 1',
-//             'вариант 2',
-//             'вариант 3'
-//         ]
-//     },
-//     {
-//         text: 'вопрос 2?',
-//         right: 1,
-//         variants: [
-//             'вариант 1',
-//             'вариант 2',
-//             'вариант 3'
-//         ]
-//     },
-//     {
-//         text: 'вопрос 3?',
-//         right: 2,
-//         variants: [
-//             'вариант 1',
-//             'вариант 2',
-//             'вариант 3'
-//         ]
-//     },
-// ];
-
-
-// const testDiv = document.getElementById('test');
-// const checkButton = document.getElementById('button');
-
-// // Функция для формирования HTML-кода вопросов
-// function generateQuestionsHTML() {
-//     let html = '';
-
-//     questions.forEach((question, index) => {
-//         html += `<p>${question.text}</p>`;
-
-//         question.variants.forEach((variant, vIndex) => {
-//             html += `
-//                 <input type="radio" name="question${index}" value="${vIndex}" id="q${index}v${vIndex}">
-//                 <label for="q${index}v${vIndex}">${variant}</label><br>
-//             `;
-//         });
-
-//         html += '<br>';
-//     });
-
-
-//     testDiv.innerHTML = html;
-// }
-
-
-// generateQuestionsHTML();
-
-
-// checkButton.addEventListener('click', function () {
-
-// });
 
 // 6.1-----------------------------------
 
@@ -1620,9 +1496,9 @@
 // function fillCalendar() {
 //   }
 //   function updateMonthYear() {
-//     var currentDate = new Date();
-//     var options = { month: 'short', year: 'numeric' };
-//     var monthYearString = currentDate.toLocaleDateString('ru-RU', options);
+//     let currentDate = new Date();
+//     let options = { month: 'short', year: 'numeric' };
+//     let monthYearString = currentDate.toLocaleDateString('ru-RU', options);
 //     document.getElementById('monthYear').textContent = monthYearString;
 //   }
 //   updateMonthYear();
